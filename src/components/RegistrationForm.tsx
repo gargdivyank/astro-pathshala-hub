@@ -46,7 +46,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div className="relative bg-cosmic-purple-dark py-16">
+    <div id="registration" className="relative bg-cosmic-purple-dark py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 items-start">
@@ -178,15 +178,16 @@ const RegistrationForm = () => {
                 <h3 className="text-white text-xl font-bold mb-4 text-center">
                   Watch What You'll Learn
                 </h3>
-                <div className="aspect-video bg-cosmic-purple-dark rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-cosmic-gold rounded-full flex items-center justify-center mx-auto mb-4">
-                      <div className="w-0 h-0 border-l-8 border-l-cosmic-purple border-t-4 border-t-transparent border-b-4 border-b-transparent ml-1"></div>
-                    </div>
-                    <p className="text-white">Free Preview Video</p>
-                    <p className="text-cosmic-gold text-sm">Scientific Kundali Analysis</p>
-                  </div>
-                </div>
+                <div className="aspect-video bg-cosmic-purple-dark rounded-lg overflow-hidden">
+  <iframe
+    className="w-full h-full"
+    src="https://www.youtube.com/embed/jYpykdbVf4Q"
+    title="Watch What You'll Learn - Scientific Kundali Analysis"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
+
               </div>
 
               <div className="bg-cosmic-gold/10 backdrop-blur-sm rounded-xl p-6 border border-cosmic-gold/30">

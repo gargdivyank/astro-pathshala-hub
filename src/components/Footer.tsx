@@ -42,7 +42,13 @@ const Footer = () => {
 
         {/* Final CTA */}
         <div className="mb-8">
-          <Button variant="cosmic-gold" size="xl" className="animate-cosmic-glow mb-4">
+          <Button variant="cosmic-gold" size="xl" className="animate-cosmic-glow mb-4"
+            onClick={() => {
+              const target = document.getElementById('registration');
+              if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}>
             SECURE MY FREE SPOT NOW
           </Button>
           <div className="flex flex-wrap justify-center gap-2">
@@ -70,7 +76,7 @@ const Footer = () => {
         </div>
 
         {/* Contact & Social */}
-        <div className="border-t border-cosmic-gold/30 pt-8">
+        {/* <div className="border-t border-cosmic-gold/30 pt-8">
           <div className="mb-4">
             <h4 className="text-cosmic-gold font-bold text-lg mb-2">Connect with Dr. Gunjan Agarwal</h4>
             <p className="text-white/80">@brahmavastu.g1</p>
@@ -82,7 +88,7 @@ const Footer = () => {
           <p className="text-cosmic-gold text-xs mt-2">
             Transform your life through ancient wisdom and modern science
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );

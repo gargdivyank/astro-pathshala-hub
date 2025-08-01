@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, Video, MapPin, Star } from "lucide-react";
+import logo from "@/assets/logo.jpeg";
+import astro from "@/assets/astro_image.png";
 
 const HeroSection = () => {
   return (
@@ -18,7 +20,13 @@ const HeroSection = () => {
           <div className="flex-1 text-center lg:text-left">
             {/* Brand Logo */}
             <div className="flex items-center justify-center lg:justify-start mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-cosmic-gold/30">
+                <img
+                  src={logo}
+                  alt="Brahmavastu Logo"
+                  className="w-13 h-12 mr-2"
+                  style={{ objectFit: "contain" }}
+                />
+              <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg p-3 ">
                 <h2 className="text-cosmic-gold font-bold text-lg">@BRAHMAVASTU.G1</h2>
               </div>
             </div>
@@ -56,62 +64,108 @@ const HeroSection = () => {
 
             {/* Event Details */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-cosmic-gold/20">
-                <Calendar className="w-6 h-6 text-cosmic-gold mb-2" />
-                <p className="text-white text-sm font-semibold">Thursday</p>
-                <p className="text-cosmic-gold text-xs">31st JULY, 2025</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-cosmic-gold/20">
-                <Clock className="w-6 h-6 text-cosmic-gold mb-2" />
-                <p className="text-white text-sm font-semibold">06:00pm - 08:00pm</p>
-                <p className="text-cosmic-gold text-xs">2 Hours Live</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-cosmic-gold/20">
-                <Video className="w-6 h-6 text-cosmic-gold mb-2" />
-                <p className="text-white text-sm font-semibold">Online Zoom Session</p>
-                <p className="text-cosmic-gold text-xs">From Home</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-cosmic-gold/20">
-                <Star className="w-6 h-6 text-cosmic-gold mb-2" />
-                <p className="text-white text-sm font-semibold">Fee: ₹49</p>
-                <p className="text-cosmic-gold text-xs font-bold">FREE</p>
-              </div>
-            </div>
+  {/* Date Card */}
+  <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl p-4 border border-cosmic-gold/30 hover:border-cosmic-gold/50 transition-all duration-300 group hover:scale-[1.02]">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="p-2 bg-cosmic-gold/10 rounded-lg group-hover:bg-cosmic-gold/20 transition-colors">
+        <Calendar className="w-5 h-5 text-cosmic-gold" />
+      </div>
+      <p className="text-white text-sm font-medium">Date</p>
+    </div>
+    <p className="text-white text-base font-semibold mb-1">Thursday</p>
+    <p className="text-cosmic-gold text-sm font-medium">31st July, 2025</p>
+  </div>
+
+  {/* Time Card */}
+  <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl p-4 border border-cosmic-gold/30 hover:border-cosmic-gold/50 transition-all duration-300 group hover:scale-[1.02]">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="p-2 bg-cosmic-gold/10 rounded-lg group-hover:bg-cosmic-gold/20 transition-colors">
+        <Clock className="w-5 h-5 text-cosmic-gold" />
+      </div>
+      <p className="text-white text-sm font-medium">Time</p>
+    </div>
+    <p className="text-white text- font-semibold mb-1">06:00 - 08:00 PM</p>
+    <p className="text-cosmic-gold text-sm font-medium">2 Hours Live Session</p>
+  </div>
+
+  {/* Platform Card */}
+  <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl p-4 border border-cosmic-gold/30 hover:border-cosmic-gold/50 transition-all duration-300 group hover:scale-[1.02]">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="p-2 bg-cosmic-gold/10 rounded-lg group-hover:bg-cosmic-gold/20 transition-colors">
+        <Video className="w-5 h-5 text-cosmic-gold" />
+      </div>
+      <p className="text-white text-sm font-medium">Platform</p>
+    </div>
+    <p className="text-white text-base font-semibold mb-1">Zoom Meeting</p>
+    <p className="text-cosmic-gold text-sm font-medium">Join from anywhere</p>
+  </div>
+
+  {/* Price Card */}
+  <div className="bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm rounded-xl p-4 border border-cosmic-gold/30 hover:border-cosmic-gold/50 transition-all duration-300 group hover:scale-[1.02]">
+    <div className="flex items-center gap-3 mb-3">
+      <div className="p-2 bg-cosmic-gold/10 rounded-lg group-hover:bg-cosmic-gold/20 transition-colors">
+        <Star className="w-5 h-5 text-cosmic-gold" />
+      </div>
+      <p className="text-white text-sm font-medium">Price</p>
+    </div>
+    <div className="flex items-end gap-2">
+      <p className="text-white/60 text-sm line-through">₹49</p>
+      <p className="text-cosmic-gold text-base font-bold">FREE</p>
+    </div>
+    <p className="text-white/80 text-xs mt-1">Limited time offer</p>
+  </div>
+</div>
 
             {/* CTA Button */}
             <div className="mb-6">
-              <Button variant="cosmic-gold" size="xl" className="w-full lg:w-auto animate-cosmic-glow">
+              <Button
+                variant="cosmic-gold"
+                size="xl"
+                className="w-full lg:w-auto animate-cosmic-glow"
+                onClick={() => {
+                  const target = document.getElementById('registration');
+                  if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
                 JOIN US
               </Button>
             </div>
 
-            {/* Registration Note */}
+            {/* Registration Note
             <div className="flex items-center justify-center lg:justify-start gap-2 text-cosmic-gold">
               <MapPin className="w-4 h-4" />
               <p className="text-sm">Tap the link in bio to register!</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Content - Expert Photo */}
-          <div className="flex-1 flex justify-center">
-            <div className="relative">
-              <div className="w-80 h-96 lg:w-96 lg:h-[500px] rounded-3xl overflow-hidden bg-cosmic-card backdrop-blur-sm border border-cosmic-gold/30 shadow-cosmic-glow">
-                <img
-                  src="/lovable-uploads/508df760-b725-4617-a425-9ab8fde87065.png"
-                  alt="Dr. Gunjan Agarwal"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              {/* Expert Info Card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-2xl p-4 border border-cosmic-gold/30">
-                <h3 className="text-cosmic-purple-dark font-bold text-xl mb-1">
-                  DR. GUNJAN AGARWAL
-                </h3>
-                <p className="text-cosmic-purple italic">A LIFE COACH</p>
-              </div>
-            </div>
-          </div>
+        {/* Right Content - Astro Arun Pandit Design */}
+<div className="flex-1 flex flex-col items-center justify-center">
+  {/* Circular Image with Gold Border */}
+  <div className="relative flex flex-col items-center">
+    <div
+      className="w-96 h-96 rounded-full border-8 border-[#CBB26A] bg-[#14192F] flex items-center justify-center overflow-hidden shadow-xl"
+      style={{ boxShadow: "0 0 0 12px #14192F, 0 0 0 18px #CBB26A" }}
+    >
+      <img
+        src={astro}
+        alt="Astro Arun Pandit"
+        className="w-full h-full object-cover rounded-full"
+        style={{ objectPosition: "45% 5%" }}
+      />
+    </div>
+    {/* Text Card Below the Image */}
+    <div className="mt-[-40px] bg-white rounded-xl shadow-lg px-8 py-6 w-[400px] text-center relative z-10">
+      <h3 className="text-2xl font-bold text-neutral-800 mb-1">DR.GUNJAN AGARWAL </h3>
+      <p className="text-gray-700 text-lg font-medium">
+        A LIFE COACH
+      </p>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </div>
