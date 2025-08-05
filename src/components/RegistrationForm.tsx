@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { UserPlus, Mail, Phone, Briefcase, AlertCircle } from "lucide-react";
+import axios from "axios";
+import { BASE_URL } from "@/utils/config";
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
@@ -17,39 +19,70 @@ const RegistrationForm = () => {
   });
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.fullName || !formData.email || !formData.phone) {
+
+
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.fullName || !formData.email || !formData.phone) {
+    toast({
+      title: "Please fill required fields",
+      description: "Name, email, and phone are required to register.",
+      variant: "destructive"
+    });
+    return;
+  }
+
+  try {
+    // Replace the URL below with your actual backend API endpoint!
+    const payload = {
+      name: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      profession: formData.profession,
+      problem: formData.problem
+    };
+    const response = await axios.post(`${BASE_URL}/api/v1/leads/add-and-send-otp`, payload);
+    console.log("response:",response);
+
+    if (response.data.success) {
       toast({
-        title: "Please fill required fields",
-        description: "Name, email, and phone are required to register.",
+        title: "Registration Successful! 🎉",
+        description: "You'll receive the Zoom link via email soon.",
+      });
+
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        profession: "",
+        problem: ""
+      });
+    } else {
+      toast({
+        title: "Registration Failed",
+        description: response.data.message || "Something went wrong.",
         variant: "destructive"
       });
-      return;
     }
-
-    // Here you would typically send the data to your backend
+  } catch (err) {
     toast({
-      title: "Registration Successful! 🎉",
-      description: "You'll receive the Zoom link via email soon.",
+      title: "Network or Server Error",
+      description: "Could not submit registration. Please try again.",
+      variant: "destructive"
     });
+    console.error(err);
+  }
+};
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      profession: "",
-      problem: ""
-    });
-  };
 
   return (
-    <div id="registration" className="relative bg-cosmic-purple-dark py-16">
+    <div id="registration" className="relative py-16" style={{
+      background: "linear-gradient(to bottom, #1A0823 0%, #50046E 100%)"
+    }}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <div className="grid lg:grid-cols-2 gap-10 items-start">
             {/* Form Section */}
             <Card className="bg-white/95 backdrop-blur-sm border-cosmic-gold/30 shadow-cosmic-glow">
               <CardHeader className="text-center">
