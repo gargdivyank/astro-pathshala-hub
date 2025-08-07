@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +19,7 @@ const RegistrationForm = () => {
     problem: ""
   });
   const { toast } = useToast();
+  const navigate = useNavigate();
 
 
 
@@ -46,11 +48,11 @@ const handleSubmit = async (e: React.FormEvent) => {
     console.log("response:",response);
 
     if (response.data.success) {
-      toast({
-        title: "Registration Successful! 🎉",
-        description: "You'll receive the Zoom link via email soon.",
-      });
-
+      // toast({
+      //   title: "Registration Successful! 🎉",
+      //   description: "You'll receive the Zoom link via email soon.",
+      // });
+      navigate('/thankyou');
       setFormData({
         fullName: "",
         email: "",
