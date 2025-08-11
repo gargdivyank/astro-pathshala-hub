@@ -5,37 +5,31 @@ import { CheckCircle, Star, Sparkles } from "lucide-react";
 const ThankYou = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center px-6 py-16" style={{
-      background: "linear-gradient(to bottom, #1A0823 0%, #50046E 100%)"
-    }}>
-      <div className="relative">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 bg-cosmic-gold/5 rounded-3xl blur-3xl"></div>
-        <div className="absolute -top-4 -right-4 w-8 h-8 bg-cosmic-gold/20 rounded-full animate-pulse"></div>
-        <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-cosmic-purple/30 rounded-full animate-pulse delay-1000"></div>
-        <div className="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-xl p-6 max-w-md w-full text-center border border-cosmic-gold/30 shadow-cosmic-glow">
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Success icon */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-8">
             <div className="relative">
-              <CheckCircle className="w-12 h-12 text-cosmic-gold animate-bounce" />
-              <Sparkles className="absolute -top-1.5 -right-1.5 w-4 h-4 text-cosmic-purple animate-spin" />
-              <Star className="absolute -bottom-1.5 -left-1.5 w-3 h-3 text-cosmic-gold animate-pulse" />
+              <CheckCircle className="w-20 h-20 text-cosmic-gold animate-bounce" />
+              <Sparkles className="absolute -top-2 -right-2 w-6 h-6 text-cosmic-purple animate-spin" />
+              <Star className="absolute -bottom-2 -left-2 w-4 h-4 text-cosmic-gold animate-pulse" />
             </div>
           </div>
           
-          <h1 className="text-3xl font-bold text-cosmic-purple-dark mb-4">
+          <h1 className="text-5xl font-bold text-cosmic-purple-dark mb-6">
             Thank You! 🎉
           </h1>
           
-          <div className="space-y-2 mb-6">
-            <p className="text-lg text-cosmic-purple font-semibold">
+          <div className="space-y-4 mb-8">
+            <p className="text-2xl text-cosmic-purple-dark font-semibold">
               Your Registration has been Successful!
             </p>
-            <p className="text-base text-cosmic-purple/80">
+            <p className="text-xl text-cosmic-purple-dark/80">
               for the Scientific Kundli Analysis Webinar
             </p>
-            <div className="bg-cosmic-gold/10 rounded-lg p-2 border border-cosmic-gold/20">
-              <p className="text-cosmic-purple-dark font-medium text-sm">
+            <div className="bg-cosmic-purple/10 rounded-xl p-6 border border-cosmic-purple/30 max-w-2xl mx-auto">
+              <p className="text-cosmic-purple-dark font-medium text-lg">
                 ✨ You'll receive the Zoom link via email soon ✨
               </p>
             </div>
@@ -45,16 +39,15 @@ const ThankYou = () => {
             onClick={() => navigate("/")} 
             variant="cosmic" 
             size="lg" 
-            className="w-full text-base font-semibold py-3 hover:scale-105 transition-all duration-300"
+            className="text-lg font-semibold py-4 px-8 hover:scale-105 transition-all duration-300"
           >
             Back to Home
           </Button>
           
-          <p className="text-xs text-cosmic-purple/60 mt-4">
+          <p className="text-sm text-cosmic-purple-dark/70 mt-8">
             Check your email for further instructions
           </p>
         </div>
-        
       </div>
     </div>
   );
