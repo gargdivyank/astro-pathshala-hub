@@ -80,7 +80,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <div id="registration" className="relative py-16" style={{
-      background: "linear-gradient(to bottom, #1A0823 0%, #50046E 100%)"
+      background: "linear-gradient(to bottom, #2C2E3A 100%, #50046E 0%)"
     }}>
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
@@ -88,10 +88,10 @@ const handleSubmit = async (e: React.FormEvent) => {
             {/* Form Section */}
             <Card className="bg-white/95 backdrop-blur-sm border-cosmic-gold/30 shadow-cosmic-glow">
               <CardHeader className="text-center">
-                <CardTitle className="text-2xl text-cosmic-purple-dark mb-2">
+                <CardTitle className="text-2xl text-[#5E3A9D] mb-2">
                   Unlock your Kundli's 100% potential
                 </CardTitle>
-                <p className="text-cosmic-purple">
+                <p className="text-[#5E3A9D]">
                   Free registration – fill in your details to book your spot!
                 </p>
               </CardHeader>
@@ -196,11 +196,11 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                   </div>
 
-                  <Button type="submit" variant="cosmic" size="lg" className="w-full">
+                  <Button type="submit" variant="cosmic" size="lg" className="w-full bg-[#5E3A9D]">
                     Reserve My Free Spot Now
                   </Button>
 
-                  <p className="text-xs text-cosmic-purple text-center">
+                  <p className="text-xs text-[#5E3A9D] text-center">
                     * Required fields. Your information is secure and will only be used for this webinar.
                   </p>
                 </form>
@@ -209,7 +209,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
             {/* Video/Testimonial Section */}
             <div className="space-y-6">
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-cosmic-gold/30">
+              <div className="bg-[#5E3A9D] backdrop-blur-sm rounded-xl p-6 border border-cosmic-gold/30">
                 <h3 className="text-white text-xl font-bold mb-4 text-center">
                   Watch What You'll Learn
                 </h3>
@@ -225,16 +225,16 @@ const handleSubmit = async (e: React.FormEvent) => {
 
               </div>
 
-              <div className="bg-cosmic-gold/10 backdrop-blur-sm rounded-xl p-6 border border-cosmic-gold/30">
-                <h4 className="text-cosmic-gold text-lg font-bold mb-3">Limited Seats!</h4>
-                <p className="text-white mb-4">
+              <div className="bg-[#E4D9F5] backdrop-blur-sm rounded-xl p-6 border border-cosmic-gold/30">
+                <h4 className="text-[#2C2E3A] text-lg font-bold mb-3">Limited Seats!</h4>
+                <p className="text-[#5E3A9D] mb-4">
                   Join 1000+ people who have already transformed their lives through scientific kundali analysis.
                 </p>
                 <div className="flex justify-between text-sm">
-                  <span className="text-white">Registered:</span>
-                  <span className="text-cosmic-gold font-bold">847/1000</span>
+                  <span className="text-[#2C2E3A]">Registered:</span>
+                  <span className="text-[#2C2E3A] font-bold">847/1000</span>
                 </div>
-                <div className="w-full bg-cosmic-purple-dark rounded-full h-2 mt-2">
+                <div className="w-full bg-[#2C2E3A] rounded-full h-2 mt-2">
                   <div className="bg-cosmic-gold h-2 rounded-full" style={{ width: '84.7%' }}></div>
                 </div>
               </div>
